@@ -1,0 +1,10 @@
+{
+  "name": "notion-mcpb-bundle",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Build-time dependencies for the Notion MCPB bundle.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build:bundle": "node scripts/build-bundle.mjs"
+  }
+}

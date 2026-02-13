@@ -1,0 +1,398 @@
+{
+  "manifest_version": "0.3",
+  "name": "notion",
+  "version": "0.1.0",
+  "display_name": "Notion MCP",
+  "description": "An MCP server bundle for the official Notion API MCP server.",
+  "license": "MIT",
+  "homepage": "https://www.notion.so",
+  "documentation": "https://github.com/makenotion/notion-mcp-server",
+  "icon": "icon-light.png",
+  "icons": [
+    {
+      "src": "icon-light.png",
+      "size": "512x512",
+      "theme": "light"
+    },
+    {
+      "src": "icon-dark.png",
+      "size": "512x512",
+      "theme": "dark"
+    }
+  ],
+  "author": {
+    "name": "Stephen Akinyemi"
+  },
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=20.0.0"
+    }
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "NOTION_TOKEN": "${user_config.notion_token}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "API-get-user",
+      "description": "Retrieve a user"
+    },
+    {
+      "name": "API-get-users",
+      "description": "List all users"
+    },
+    {
+      "name": "API-get-self",
+      "description": "Retrieve your token's bot user"
+    },
+    {
+      "name": "API-post-search",
+      "description": "Search by title"
+    },
+    {
+      "name": "API-get-block-children",
+      "description": "Retrieve block children"
+    },
+    {
+      "name": "API-patch-block-children",
+      "description": "Append block children"
+    },
+    {
+      "name": "API-retrieve-a-block",
+      "description": "Retrieve a block"
+    },
+    {
+      "name": "API-update-a-block",
+      "description": "Update a block"
+    },
+    {
+      "name": "API-delete-a-block",
+      "description": "Delete a block"
+    },
+    {
+      "name": "API-retrieve-a-page",
+      "description": "Retrieve a page"
+    },
+    {
+      "name": "API-patch-page",
+      "description": "Update page properties"
+    },
+    {
+      "name": "API-post-page",
+      "description": "Create a page"
+    },
+    {
+      "name": "API-retrieve-a-page-property",
+      "description": "Retrieve a page property item"
+    },
+    {
+      "name": "API-retrieve-a-comment",
+      "description": "Retrieve comments"
+    },
+    {
+      "name": "API-create-a-comment",
+      "description": "Create comment"
+    },
+    {
+      "name": "API-query-data-source",
+      "description": "Query a data source"
+    },
+    {
+      "name": "API-retrieve-a-data-source",
+      "description": "Retrieve a data source"
+    },
+    {
+      "name": "API-update-a-data-source",
+      "description": "Update a data source"
+    },
+    {
+      "name": "API-create-a-data-source",
+      "description": "Create a data source"
+    },
+    {
+      "name": "API-list-data-source-templates",
+      "description": "List templates in a data source"
+    },
+    {
+      "name": "API-retrieve-a-database",
+      "description": "Retrieve a database"
+    },
+    {
+      "name": "API-move-page",
+      "description": "Move a page"
+    }
+  ],
+  "tools_generated": true,
+  "user_config": {
+    "notion_token": {
+      "type": "string",
+      "title": "Notion Integration Token",
+      "description": "Notion integration token used to authenticate API requests.",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "_meta": {
+    "store.tool.mcpb": {
+      "runtime": "javascript/node",
+      "categories": [
+        "productivity"
+      ],
+      "scripts": {
+        "build": "npm run build:bundle"
+      },
+      "compatibility": {
+        "platforms": [
+          "darwin-arm64",
+          "darwin-x86_64",
+          "linux-arm64",
+          "linux-x86_64",
+          "win32-arm64",
+          "win32-x86_64"
+        ]
+      },
+      "static_responses": {
+        "tools/list": {
+          "tools": [
+            {
+              "name": "API-get-user",
+              "description": "Retrieve a user",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-get-users",
+              "description": "List all users",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-get-self",
+              "description": "Retrieve your token's bot user",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-post-search",
+              "description": "Search by title",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-get-block-children",
+              "description": "Retrieve block children",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-patch-block-children",
+              "description": "Append block children",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-retrieve-a-block",
+              "description": "Retrieve a block",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-update-a-block",
+              "description": "Update a block",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-delete-a-block",
+              "description": "Delete a block",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-retrieve-a-page",
+              "description": "Retrieve a page",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-patch-page",
+              "description": "Update page properties",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-post-page",
+              "description": "Create a page",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-retrieve-a-page-property",
+              "description": "Retrieve a page property item",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-retrieve-a-comment",
+              "description": "Retrieve comments",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-create-a-comment",
+              "description": "Create comment",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-query-data-source",
+              "description": "Query a data source",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-retrieve-a-data-source",
+              "description": "Retrieve a data source",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-update-a-data-source",
+              "description": "Update a data source",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-create-a-data-source",
+              "description": "Create a data source",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-list-data-source-templates",
+              "description": "List templates in a data source",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-retrieve-a-database",
+              "description": "Retrieve a database",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            {
+              "name": "API-move-page",
+              "description": "Move a page",
+              "input_schema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
